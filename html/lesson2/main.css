@@ -1,0 +1,135 @@
+.d-flex {
+    display: flex;
+}
+
+.wrap {
+    width: 1900px;
+    height: 950px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.up {
+    width: 900px;
+    height: 300px;
+    background: tomato;
+}
+
+.left, .main {
+    width: 650px;
+    height: 600px;
+    background: aqua;
+}
+
+.right, .aside {
+    width: 250px;
+    height: 600px;
+    background: indigo;
+}
+
+.header, .nav, .footer {
+    width: 900px;
+    height: 100px;
+}
+
+.header, .hdr, .home {
+    background: #fd5101;
+}
+
+.nav, .hero {
+    background: #fd8301;
+}
+
+.footer, .ftr, .about {
+    background: #101bce;
+}
+
+.hdr, .ftr {
+    width: 900px;
+    height: 150px;
+}
+
+.menu {
+    width: 300px;
+    height: 600px;
+    background: #38af22;
+}
+
+.post1, .post2 {
+    width: 600px;
+    height: 300px;
+}
+
+.post1, .big_widgets, .bbq_kabobs, .main_content {
+    background: #2fa8c6;
+}
+
+.post2, .bigger_widgets, .summer_kabobs, .sidebar {
+    background: #fdd201;
+}
+
+.widget {
+    width: 900px;
+    height: 150px;
+    background: #38af22;
+}
+
+.big_widgets, .bigger_widgets {
+    width: 300px;
+    height: 400px;
+}
+
+.contact {
+    width: 900px;
+    height: 350px;
+    background: #8c4ccd;
+}
+
+.home, .about {
+    width: 300px;
+    height: 500px;
+}
+
+.kabobs {
+    width: 600px;
+    height: 200px;
+    background: silver;
+}
+
+.bbq_kabobs, .summer_kabobs {
+    width: 200px;
+    height: 200px;
+}
+
+.hero {
+    width: 350px;
+    height: 250px;
+}
+
+.sidebar {
+    width: 350px;
+    height: 300px;
+}
+
+.main_content {
+    width: 550px;
+    height: 350px;
+}
+
+.extra_content {
+    width: 550px;
+    height: 200px;
+    background: #f177b6;
+}
+
+.images {
+    width: 700px;
+    height: 150px;
+    background: #68b7ea;
+}
+
+.posts {
+    width: 200px;
+    height: 150px;
+    background: #3ec18c;
+}

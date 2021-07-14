@@ -1,0 +1,99 @@
+.header {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+.header-container {
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+    width: 125px;
+    margin: 25px 25px;
+}
+
+.header-right {
+    align-items: flex-end;
+}
+
+.item40 {
+    margin: 25px 10px;
+}
+
+.big-container {
+    margin-top: 100px;
+}
+
+.big-container-left {
+    width: 250px;
+}
+
+.bcl {
+    margin: 90px 0 25px 0;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.big-container-right {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 90px;
+}
+
+.btr {
+    text-align: center;
+    margin: 10px 0 30px 0;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    margin: 100px 0;
+}
+
+.wrap {
+    margin: 100px 0;
+}
+
+.round {
+    flex-shrink: 0;
+    margin: 0 50px 50px 0;
+}
+
+.content {
+    width: 300px;
+    height: 250px;
+    margin: 0 15px 80px 15px;
+}
+
+h3, p {
+    margin-top: 15px;
+}
+
+.footer {
+    height: 150px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    margin: 0 10px;
+}
+
+.next-page a {
+    text-decoration: none;
+}
+
+.next-page a:hover {
+    text-decoration: underline;
+}
