@@ -1,0 +1,32 @@
+.outer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.inner {
+    background: #9abbbb;
+    border: 1px solid #3d3d3d;
+    margin: 10px;
+    padding: 20px;
+    width: calc(100% / 3);
+}
+
+h2 {
+    text-align: center;
+}
+
+.itm {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+p {
+    text-align: justify;
+    margin: 20px;
+}
+
+img {
+    height: 200px;
+}
