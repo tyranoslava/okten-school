@@ -12,6 +12,24 @@ document.write('</ul>')
 //     Зробити адекватну стилізацію. Великими літерами прописані властивості об'єкту які потрібно впровадити в шаблон.
 // Шаблон застосувати до кожного об'єкта в масиві
 
+// <!--template 2.1-->
+// <div>
+// NAME- SURNAME- AGE- INFO- <img src="PHOTO" alt="">
+// </div>
+//
+// <!--template 2.2-->
+// <div>
+//     <h2>NAME SURNAME. age is - AGE</h2>
+//     <p>INFO</p>
+//     <img src="PHOTO" alt="">
+// </div>
+// <!--
+// інші об'єкти з масиву
+// ...
+// ...
+// ...
+// -->
+
 let
     simpsons = [
         {
@@ -55,6 +73,15 @@ let
 
 document.write(`<div>`);
 
+for (const simpson of simpsons) {
+
+    document.write(
+        `<div class="wrap">
+<div>NAME - ${simpson.name}, SURNAME - ${simpson.surname}, AGE - ${simpson.age}, INFO - ${simpson.info}</div>
+<div><img src="${simpson.photo}" alt=""></div>
+</div>`);
+}
+
 document.write(`</div>`);
 
 // --------template2.2-----------
@@ -70,9 +97,59 @@ for (const simpson of simpsons) {
 <div><p>${simpson.info}</p></div>
 <div><img src="${simpson.photo}" alt=""></div>
 </div>
-</div>`
-    );
-
+</div>`);
 }
 document.write(`</div>`);
 
+// 3.Використовуючи данні з масиву, за допомоги document.write та циклу
+// побудувати структуру по шаблону template3.1 Зробити адекватну стилізацію
+// Великими літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
+// <!--        template 3.1-->
+// <div>
+//     <div class="product-card">
+//         <h3 class="product-title">TITLE. Price - PRICE</h3>
+//         <img src="" alt="" class="product-image">
+//     </div>
+//     <!--
+//                 інші об'єкти з масиву
+//                 ...
+//                 ...
+//                 ...
+//     -->
+//
+// </div>
+
+let products = [
+    {
+        title: 'milk',
+        price: 22,
+        image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+    },
+    {
+        title: 'juice',
+        price: 27,
+        image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+    },
+    {
+        title: 'tomato',
+        price: 47,
+        image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+    },
+    {
+        title: 'tea',
+        price: 15,
+        image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+    },
+];
+
+document.write(`<div class="product-cards">`);
+
+for (const product of products) {
+    document.write(`<div class="product-card">
+<h3 class="product-title">${product.title}. Price - ${product.price}</h3>
+<img src="${product.image}" alt="">
+</div>`);
+    
+}
+
+document.write(`</div>`);
