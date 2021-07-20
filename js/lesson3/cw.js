@@ -1,22 +1,4 @@
 // - створити функцію яка приймає масив та виводить його
-function logArray(array) {
-    console.log(array);
-}
-logArray([1, "hello", 20, false, null]);
-
-function sortNumbers(numArray) {
-    return numArray.sort(function (a, b) {
-        return a - b;
-    });
-}
-
-// - створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!)
-function logMin(array) {
-    const sortedArray = sortNumbers(array);
-    console.log("min: ", sortedArray[0]);
-}
-logMin([4, 20, 1]);
-
 // - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
 // - створити функцію яка повертає найбільше число з масиву
 // - створити функцію яка повертає найменьше число з масиву
