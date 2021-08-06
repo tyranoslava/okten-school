@@ -1,14 +1,17 @@
 const url = new URL(window.location);
 const userId = url.searchParams.get('userId');
 const container = document.createElement('div');
+container.classList.add('container');
+const infoContainer = document.createElement('div');
+infoContainer.classList.add('infoContainer');
 document.body.appendChild(container);
+container.appendChild(infoContainer);
 
 fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
     .then(value => value.json())
     .then(user => {
         Object.keys(user).forEach(i => {
             const value = user[i];
-            console.log(i, value);
             const p = document.createElement('p');
 
             if (typeof value === "object") {
@@ -21,16 +24,16 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
                             const subSubValue = subValue[i];
                             const p = document.createElement('p');
                             p.innerText = `${i}: ${subSubValue}`
-                            container.appendChild(p)
+                            infoContainer.appendChild(p)
                         });
                     } else {
                         p.innerText = `${i}: ${subValue}`
-                        container.appendChild(p);
+                        infoContainer.appendChild(p);
                     }
                 });
             } else {
                 p.innerText = `${i}: ${value}`
-                container.appendChild(p);
+                infoContainer.appendChild(p);
             }
         });
 

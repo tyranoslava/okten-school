@@ -1,4 +1,5 @@
 const usersBox = document.createElement('div');
+usersBox.classList.add('outer');
 document.body.appendChild(usersBox);
 
 fetch('https://jsonplaceholder.typicode.com/users')
@@ -6,6 +7,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
     .then(users => {
         for (const user of users) {
             const userBox = document.createElement('div');
+            userBox.classList.add('inner');
             usersBox.appendChild(userBox);
             const pUser = document.createElement('p');
             pUser.innerText = `${user.id} - ${user.name}`;

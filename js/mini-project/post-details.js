@@ -2,7 +2,11 @@ const url = new URL(window.location);
 const userId = url.searchParams.get('userId');
 const postId = url.searchParams.get('postId');
 const container = document.createElement('div');
+container.classList.add('wrap')
+const smallContainer = document.createElement('div');
+smallContainer.classList.add('smallContainer');
 document.body.appendChild(container);
+container.appendChild(smallContainer);
 
 fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then(value => value.json())
@@ -11,8 +15,8 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
             const value = post[i];
             console.log(i, value);
             const p = document.createElement('p');
-            p.innerText = `${i}: ${value}`
-            container.appendChild(p);
+            p.innerHTML = `${i}: ${value}`
+            smallContainer.appendChild(p);
         })
 
         let commentsBtn = document.createElement('button');
