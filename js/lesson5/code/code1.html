@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>hello code1</h1>
+
+<button id="btn">reload</button>
+
+<script>
+
+    let item = localStorage.getItem('user');
+    console.log(item);
+    let parse = JSON.parse(item);
+    console.log(parse);
+
+    let btn = document.getElementById('btn');
+    btn.onclick = function () {
+        window.location.reload();
+    };
+
+    // BOM
+    // local storage
+
+    localStorage.setItem('info', 'some value 1')
+
+</script>
+
+</body>
+</html>

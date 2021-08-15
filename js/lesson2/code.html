@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // ----------demo-----------
+
+    // let users = [
+    //     'vasya', 'petya', 'kolya'
+    // ];
+    // console.log(users.length);
+    // console.log(users[0]);
+    // console.log(users[1]);
+    // console.log(users[100500]);
+
+    // ----------------цикл FOR OF (ITER): for (аргументи) {тіло циклу}
+
+    // for (let user of users) {
+    //     console.log(user);
+    //     document.write(`<div>${user}</div>`)
+    // }
+
+    // for (let user of [{name: 'vasya', age: 21}, {name: 'petya', age: 22}, {name: 'kolya', age: 23}]){
+    //     document.write(`<div>${user.name} - ${user.age}</div>`)
+    // }
+
+    // let users = [
+    //     {name: 'vasya', age: 21, status: true},
+    //     {name: 'petya', age: 32, status: false},
+    //     {name: 'kolya', age: 23, status: true},
+    //     {name: 'olya', age: 33, status: true}
+    // ]
+    //
+    // for (let user of users) {
+    //     if (user.age > 30 && user.status) {
+    //         document.write(`<div>${user.name} - ${user.age}</div>`)
+    //     }
+    // }
+
+    //----Якщо в умові пишемо user.status, розуміємо, що він true, а якщо !user. - false
+
+    // ----------------цикл FOR IN (ITIN):
+
+    // let user = {name: 'vasya', age: 31, status: false, skills: [1, 2, 3], asd: 'qwe'};
+    //
+    // for (const key in user) {
+    //     console.log(key);            //виводить перелік усіх ключів
+    //     console.log(user[key]);      //виводить перелік усіх значень
+    //     console.log(key, user[key]); //виводить перелік усіх ключів та значень
+    // }
+
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
+
+    // for (let i=0; i<users.length; i++) {
+    //     console.log(i);
+    //     console.log(users[i]);
+    // }
+    //
+    // for (let i=3; i<users.length-1; i++) {
+    //     console.log(users[i]);
+    // }
+
+    // ----------------цикл WHILE
+
+    // let i = 0;
+    // while (i < users.length) {
+    //     console.log(users[i]);
+    //     i++;
+    // }
+
+    // let x = 0;
+    // x++                   //1
+    // console.log(x);
+    // x = x + 1;            //2
+    // x = x + 10;           //12
+    // ++x;                  //13 - інкремент
+    // x += 1;               //14
+    // --x;                  //13 - декремент
+    // x--;                  //12
+    // x = x + 1000 те саме, що і x += 1000
+
+    // let a = 0;
+    // let b = a++
+    // console.log(a, b);
+    // // a=1 b=0
+    //
+    // let c = 0;
+    // let d = ++c
+    // console.log(c, d);
+    // // c=1 d=1
+
+    // ----------lesson2-----------
+
+    //     Різновиди циклів:
+    // 1) цикл for з надбудовами for (of) та for (in)
+    // 2) цикл while з надбудовою do while
+
+    // ------------FOR OF (для кожного елемента з масиву):
+
+    // let skills = ['html', 'css', 'js', 'mongodb', 'angular', 'react'];
+    // for (const skill of skills) {
+    //     console.log(skill);
+    //     document.write(`<ul>`);
+    //     document.write(`<li>${skill}</li>`)
+    //     document.write(`</ul>`);
+    // }
+    //
+    // //---------FOR (ITAR): (перевага - можна вибирати, з якого елемента починати цикл і яким закінчувати, з яким кроком)
+    //
+    // let users = [
+    //     {name: 'vasya', age: 21, status: true},
+    //     {name: 'petya', age: 32, status: false},
+    //     {name: 'kolya', age: 23, status: true},
+    //     {name: 'olya', age: 33, status: true}
+    // ]
+    //
+    // document.write(`<div>`);
+    // for (let i = 0; i < users.length; i++) {            //м.б.(let i = 1/2/3/10; i < users.length-1/-2/-3; i+=2/+=3/+=4)
+    //     const user = users[i];
+    //     document.write(
+    //         `<div>
+    //             <h2>${user.name} - ${user.age}</h2>
+    //         </div>`)
+    // }
+    // document.write(`</div>`);
+    //
+    // //--------RITAR - зворотній цикл, якщо потрібно йти від останнього елементу циклу до першого
+    //
+    // // for (let i = users.length - 1; i >= 0; i--) {
+    // //     const user = users[i];
+    // // }
+    //
+    // //-------WHILE:
+    //
+    // let i = 0;
+    // while (i < users.length) {
+    //     let user = users[i];
+    //     document.write(
+    //         `<div>
+    //             <h2>${user.name} - ${user.age}</h2>
+    //         </div>`);
+    //     i++
+    // }
+    //
+    // //-------DO WHILE (спочактку робить певні дії, а потім їх перевіряє):
+    //
+    // do {
+    //     console.log('fvaedv');
+    // }
+    // while (false);
+
+    //---------------об"єднання двох циклів
+
+    // let xArr = [1, 2, 3, 4];
+    // let yArr = [11, 22, 33, 44];
+    // for (let i = 0; i < yArr.length; i++) {
+    //     console.log(xArr[i]);
+    //     console.log(yArr[i]);
+    // }
+
+    //---------- FOR IN (ITIN) - ітерація ключів об"єктів
+
+    // let userIrka = {name: 'Ira', age: 19};
+    // for (const key in userIrka) {
+    //     // console.log(key); //ключі
+    //     console.log(userIrka[key]); //значення
+    // }
+
+    // let x = 0;
+    // let sArr = [];
+    // let userIra = {name: 'Ira', age: 19};
+    // for (const key in userIra) {
+    //     console.log(userIra[key]);
+    //     sArr[x] = userIra[key];
+    //     x++
+    // }
+    // console.log(x);
+    // console.log(sArr);
+
+</script>
+
+</body>
+</html>

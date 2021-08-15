@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        form {
+            background: silver;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1></h1>
+<p class="target xxx">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, nam!</p>
+<div>
+    <img src="https://pbs.twimg.com/media/E1OjBefUcAAFaIx?format=jpg&name=large" alt="" id="pic">
+</div>
+<ul class="menu">
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+</ul>
+
+<p class="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequuntur, iste iure laudantium modi
+    nisi nulla rem
+    similique sunt voluptatibus.</p>
+
+<h2 id="header"></h2>
+
+<form id="f1" action="code1.html">
+    <input type="text" name="name">
+    <input type="text" name="surname">
+    <button>save</button>
+</form>
+
+<form id="a" name="b" action="">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <button>log in</button>
+</form>
+
+<h2 id="target0"></h2>
+
+<script>
+
+    // Document Object Model, DOM
+
+    // document - об"єкт, який характеризує весь документ
+    // document.head - об"єкт, який характеризує тег "head" і все, що в ньому знаходиться
+    // document.body - об"єкт, який характеризує тег "body" і все, що в ньому знаходиться
+    // console.log(document);
+
+    // get by id / class / tag + style
+
+    let img = document.getElementById('pic');
+    console.log(img);
+    img.alt = 'svrojit';
+    img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyjThXKeQPSPly0pO8nr9IWGKQVyOZdraWXg&usqp=CAU';
+
+    let liCollection = document.getElementsByTagName('li');
+    console.log(liCollection);
+    for (const li of liCollection) {
+        console.log(li);
+        li.style.background = 'silver';
+        li.style.height = '40px';
+        // li.innerText = '<strong>pain</strong>'; - міняє все так, як написано, не мінє стилі
+        li.innerHTML = '<strong>pain</strong>';
+    }
+
+    let targetList = document.getElementsByClassName('target');
+    console.log(targetList);
+
+    for (const target of targetList) {
+        target.innerText = 'once i heel from my trauma and acquire healthy coping skills it is over for you all';
+        console.log(target.classList);
+        // target.classList.add('xxx');
+        // target.classList.remove('xxx');
+        target.classList.toggle('xxx');
+        /* toggle - перемикач, який додає клас там, де його не було і видаляє там, де він був */
+    }
+
+    let target1 = targetList[0];
+    console.log(target1);
+    console.log(target1.nextElementSibling);
+
+    let bodyChildren = document.body.children;
+    console.log(document.body.children);
+    let arrayOfBodyChildren = [...bodyChildren]; /* cтворити масив з псевдомасива. В масива, на відміну від псевдомасива, є методи */
+    console.log(document.body.childNodes); /* дитячі вузли */
+
+    // append & appendChild
+
+    let div = document.createElement('div');
+    div.innerText = 'new created div';
+    div.classList.add('test');
+    let targets = document.getElementsByClassName('target');
+    let target = targets[0];
+    target.appendChild(div);   /*в append через кому можна додавати вузли, а в appendChild - тільки один елемент*/
+
+    // iterate array + append
+    // create element
+
+    let skills = ['html', 'css', 'js'];
+
+    let ul = document.createElement('ul');
+    ul.classList.add('skills-list');
+
+    for (const skill of skills) {
+        let li = document.createElement('li');
+        li.innerText = skill;
+        ul.appendChild(li);
+    }
+    document.body.appendChild(ul);
+
+    // ------- Функції-івенти
+
+    // target1.onclick = function () {
+    //     // console.log('fbdfbadfdvsfv');
+    //     this.style.background = 'silver';
+    //
+    // }
+    //
+    // let f1 = document.forms.f1;
+    // // f1.onsubmit=function (eventObject) {
+    // //     eventObject.preventDefault();   /*заборонити перезавантаження сторінки після натискання "save"*/
+    // //     console.log('action1');
+    // // }
+    // // f1.onsubmit=function (eventObject) {
+    // //     eventObject.preventDefault();
+    // //     console.log('action2');     /*буде виконуватися лише action2, бо onsubmit - це подія, яка перевизначається і виконується один раз (той, хто останній)*/
+    // // }
+    //
+    // /*Це можна замінити функцією EventListener - слухач події,
+    // * завдяки якому на один об"єкт можна ставити кілька функцій*/
+    //
+    // f1.addEventListener('submit',function (e) {
+    //     e.preventDefault();
+    //     console.log('action1');
+    // });
+    // f1.addEventListener('submit',function (e) {
+    //     e.preventDefault();
+    //     console.log('action2');
+    // });
+    //
+    // let nameInput = f1.name;
+    // nameInput.oninput = function (eventObject) {
+    //     // console.log(eventObject);
+    //     console.log(eventObject.target.value);
+    //     document.getElementById('header').innerText = eventObject.target.value;
+    // }
+
+
+    let users = [];
+
+    let f1 = document.forms.f1;
+    let nameInput = f1.name;
+    let surnameInput = f1.surname;
+
+    f1.addEventListener('submit', (event) => {
+        // event.preventDefault();
+        let name = nameInput.value;
+        let surname = surnameInput.value;
+        let user = {
+            name: name,
+            surname: surname
+        };
+        // users.push(user);
+        // console.log(users);
+
+        // let s = JSON.stringify(user); /*перетворити об'єкт в стрінгу*/
+        // console.log(s);
+        // let parse = JSON.parse(s);  /*перетворити стрінгу в об'єкт*/
+        // console.log(parse);
+
+        let jsonUser = JSON.stringify(user);
+
+        localStorage.setItem('user', jsonUser);
+
+    });
+
+    let newTarget = document.getElementById('target0')
+
+    console.log(document.forms.a);  // знайти форму за ідентифікатором
+    console.log(document.forms.b);  // знайти форму за неймом
+    let form = document.forms.a;
+    console.log(form);
+    let username = form.username;
+    console.log(username);
+    let password = form.username;
+    console.log(password);
+    username.oninput = function (e) {
+        // console.log(e.target.value);
+        console.log(this.value);
+        newTarget.innerText = this.value;
+    }
+
+    // на форму можна поставити подію (form.on...):
+
+    // form.onsubmit = function () {
+    //     // alert('vjvcjsdij');
+    //     console.log('submit');
+    // };                           // працює при введенні логіна і пароля
+
+    // form.onclick = function () {
+    //     console.log('submit');
+    // };                           // працює при кліку мишки на поле форми
+
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        console.log(e);
+        console.log(e.target);
+        console.log(e.target.username.value);
+        console.log(e.target.password.value);
+        /*все, що заповнюється в формі - звернення до value
+        * в інших випадках звертаємося до innerText*/
+    }
+
+</script>
+
+</body>
+</html>
